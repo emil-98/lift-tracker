@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d939a586964056b259f0dbf1fb42335b",
+    "entities": [
+      {
+        "tableName": "lift_list_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`liftID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `lift_name` TEXT, `num_sets` INTEGER NOT NULL, `goal_reps` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "liftID",
+            "columnName": "liftID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "liftName",
+            "columnName": "lift_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sets",
+            "columnName": "num_sets",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "goalReps",
+            "columnName": "goal_reps",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "liftID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd939a586964056b259f0dbf1fb42335b')"
+    ]
+  }
+}

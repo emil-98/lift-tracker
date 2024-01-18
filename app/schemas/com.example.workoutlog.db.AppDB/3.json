@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "17ebb1fb0f7d445301d7e89beb2bf778",
+    "entities": [
+      {
+        "tableName": "lift_list_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`liftID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `lift_name` TEXT, `num_sets` INTEGER NOT NULL, `goal_reps` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "liftID",
+            "columnName": "liftID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "liftName",
+            "columnName": "lift_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sets",
+            "columnName": "num_sets",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "goalReps",
+            "columnName": "goal_reps",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "liftID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "lift_record_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`recordID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date_record` TEXT, `name_record` TEXT, `weight_record` REAL NOT NULL, `reps_record` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "recordID",
+            "columnName": "recordID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateRecord",
+            "columnName": "date_record",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nameRecord",
+            "columnName": "name_record",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight_record",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reps",
+            "columnName": "reps_record",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "recordID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '17ebb1fb0f7d445301d7e89beb2bf778')"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/addUITitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addLiftTxt"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/liftNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_lift_hint"
+        android:layout_below="@id/addUITitle"
+        android:layout_margin="16dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/setsInput"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="Sets"
+        android:layout_below="@id/liftNameInput"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/goalRepsInput"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="Reps"
+        android:layout_below="@id/setsInput"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/cancelTxtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelAddTxt"
+        android:layout_below="@id/liftNameInput"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@android:color/darker_gray"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/submitTxtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cancelTxtBtn"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp"
+        android:text="@string/saveTxt"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@drawable/button_state_colors"
+        android:clickable="true"/>
+
+</RelativeLayout>
